@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.comment__rating {
+    align-items: center;
+    background-color: hsl(228, 33%, 97%);
+    border-radius: 0.5rem;
+    color: hsl(238, 40%, 52%);
+    display: flex;
+    font-weight: 500;
+    justify-content: space-around;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    width: 30%;
+}
+
+.comment__rating-plus,
+.comment__rating-minus {
+    background-color: transparent;
+    border: none;
+    color: hsl(211, 10%, 45%);
+    cursor: pointer;
+    display: flex;
+    place-items: center;
+}

@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.comment__container {
+    background-color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.comment__section-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.comment__section-avatar {
+    width: 12%;
+}
+
+.comment__section-username {
+    font-weight: 700;
+    left: 15%;
+    margin-right: 4rem;
+    position: absolute;
+}
+
+.comment__section-username::after {
+    background-color: hsl(238, 40%, 52%);
+    color: white;
+    content: 'you';
+    font-size: 0.8rem;
+    margin-left: 0.8rem;
+    margin-top: 0.1rem;
+    padding: 0 0.5rem 0.2rem 0.5rem;
+    position: absolute;
+}
+
+.comment__section-posttime {
+    color: hsl(211, 10%, 45%);
+}
+
+.comment__section-buttons {
+    bottom: 1.5rem;
+    position: absolute;
+    right: 1rem;
+}
+
+.comment__section-delete-button,
+.comment__section-edit-button,
+.comment__section-reply-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    margin-left: 1rem;
+}
+
+.comment__section-delete-button {
+    color: hsl(358, 79%, 66%);
+}
+
+.comment__section-edit-button,
+.comment__section-reply-button {
+    color: hsl(238, 40%, 52%);
+}
+
+.comment__section-text {
+    color: hsl(211, 10%, 45%);
+    line-height: 1.5;
+}
