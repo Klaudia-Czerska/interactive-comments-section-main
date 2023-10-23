@@ -4,7 +4,8 @@
     padding: 0;
 }
 
-.comment__container {
+.comment__container,
+.comment__container--reply {
     background-color: white;
     border-radius: 0.5rem;
     display: flex;
@@ -13,6 +14,20 @@
     padding: 1rem;
     position: relative;
     width: 100%;
+}
+
+.comment__container--reply {
+    margin-left: 1rem;
+    width: calc(100% - 1rem);
+}
+
+.comment__container--reply::before {
+    border: solid 1px hsl(223, 19%, 93%);
+    content: '';
+    height: 100%;
+    left: -1rem;
+    position: absolute;
+    top: 0;
 }
 
 .comment__section-info {
@@ -27,22 +42,33 @@
     width: 12%;
 }
 
-.comment__section-username {
-    font-weight: 700;
+.comment__section-username-container {
     left: 15%;
-    margin-right: 4rem;
     position: absolute;
 }
 
-.comment__section-username::after {
+.comment__section-username {
+    font-weight: 700;
+}
+
+.comment__section-you,
+.comment__section-you--visible {
     background-color: hsl(238, 40%, 52%);
     color: white;
     content: 'you';
     font-size: 0.8rem;
-    margin-left: 0.8rem;
+    margin-left: 0.5rem;
     margin-top: 0.1rem;
     padding: 0 0.5rem 0.2rem 0.5rem;
     position: absolute;
+}
+
+.comment__section-you {
+    display: none;
+}
+
+.comment__section-you--visible {
+    display: inline-block;
 }
 
 .comment__section-posttime {
@@ -61,16 +87,31 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    display: none;
     font-weight: 700;
     margin-left: 1rem;
 }
 
-.comment__section-delete-button {
+.comment__section-delete-button--visible,
+.comment__section-edit-button--visible,
+.comment__section-reply-button--visible {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    margin-left: 1rem;
+}
+
+.comment__section-delete-button,
+.comment__section-delete-button--visible {
     color: hsl(358, 79%, 66%);
 }
 
 .comment__section-edit-button,
-.comment__section-reply-button {
+.comment__section-edit-button--visible,
+.comment__section-reply-button,
+.comment__section-reply-button--visible {
     color: hsl(238, 40%, 52%);
 }
 

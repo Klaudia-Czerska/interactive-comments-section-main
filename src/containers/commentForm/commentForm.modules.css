@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.comments__post {
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.comments__post-avatar {
+    bottom: 1rem;
+    position: absolute;
+    width: 10%;
+}
+
+.comments__post-form {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comments__post-text {
+    border-radius: 0.5rem;
+    border: solid 1px hsl(223, 19%, 93%);
+    color: hsl(211, 10%, 45%);
+    resize: none;
+}
+
+.comments__post-submit {
+    background-color: hsl(238, 40%, 52%);
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 700;
+    padding: 0.7rem;
+    width: 30%;
+}

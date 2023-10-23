@@ -1,28 +1,30 @@
 import React from 'react';
 import Score from '../../components/score/score';
 import './comment.modules.css';
-import avatar from '../../assets/avatars/image-amyrobson.png';
 import del from '../../assets/icon-delete.svg';
 import edit from '../../assets/icon-edit.svg';
 import reply from '../../assets/icon-reply.svg';
 
-function Comment (props) {
+function Comment ({ imgSrc, name, you, posttime, comment, score, youVoted, isReply }) {
     return (
-        <div className='comment__container'>
-            <Score />
+        <div className={isReply ? 'comment__container--reply' : 'comment__container'}>
+            <Score score={score} youVoted={youVoted} />
             <div className='comment__section'>
                 <div className='comment__section-info'>
-                    <img className='comment__section-avatar' src={avatar}></img>
-                    <span className='comment__section-username'>amyrobson</span>
-                    <span className='comment__section-posttime'>1 month ago</span>
+                    <img className='comment__section-avatar' src={imgSrc}></img>
+                    <div className='comment__section-username-container'>
+                        <span className='comment__section-username'>{name}</span>
+                        <span className={you ? 'comment__section-you--visible' : 'comment__section-you'}>you</span>
+                    </div>
+                    <span className='comment__section-posttime'>{posttime}</span>
                 </div>
                 
                 <div className='comment__section-buttons'>
-                    <button className='comment__section-delete-button'><img src={del}></img> Delete</button>
-                    <button className='comment__section-edit-button'><img src={edit}></img> Edit</button>
-                    <button className='comment__section-reply-button'><img src={reply}></img> Reply</button>
+                    <button className={you ? 'comment__section-delete-button--visible' : 'comment__section-delete-button'}><img src={del}></img> Delete</button>
+                    <button className={you ?'comment__section-edit-button--visible' : 'comment__section-edit-button'}><img src={edit}></img> Edit</button>
+                    <button className={you ? 'comment__section-reply-button' : 'comment__section-reply-button--visible'}><img src={reply}></img> Reply</button>
                 </div>
-                <p className='comment__section-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, dolor animi tenetur quia, praesentium iure temporibus corrupti est sint incidunt sed earum, eum ipsum assumenda aperiam cumque obcaecati cum tempora!</p>
+                <p className='comment__section-text'>{comment}</p>
             </div>
         </div>
         
